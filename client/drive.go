@@ -7,7 +7,6 @@ import (
 	"os"
 	"strings"
 
-	"github.com/joho/godotenv"
 	"golang.org/x/oauth2/jwt"
 	"google.golang.org/api/drive/v3"
 	"google.golang.org/api/option"
@@ -16,10 +15,10 @@ import (
 func NewDriveService() (*drive.Service, error) {
 
 	ctx := context.Background()
-	err := godotenv.Load(".env")
-	if err != nil {
-		log.Fatalf("Error loading .env file")
-	}
+	// err := godotenv.Load(".env")
+	// if err != nil {
+	// 	log.Fatalf("Error loading .env file")
+	// }
 
 	privateKey := os.Getenv("PRIVATE_KEY")
 	clientEmail := os.Getenv("CLIENT_EMAIL")

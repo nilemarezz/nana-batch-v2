@@ -10,7 +10,6 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/joho/godotenv"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/option"
 	"google.golang.org/api/sheets/v4"
@@ -34,10 +33,10 @@ var SheetTemplate = map[string]int{}
 
 func NewService() (*sheets.Service, error) {
 	// Load the .env file
-	err := godotenv.Load(".env")
-	if err != nil {
-		log.Fatalf("Error loading .env file")
-	}
+	// err := godotenv.Load(".env")
+	// if err != nil {
+	// 	log.Fatalf("Error loading .env file")
+	// }
 
 	privateKey := os.Getenv("PRIVATE_KEY")
 	clientEmail := os.Getenv("CLIENT_EMAIL")

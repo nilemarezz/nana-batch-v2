@@ -11,7 +11,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/joho/godotenv"
 	sheet "github.com/nilemarezz/nana-batch-v2/client"
 	"github.com/nilemarezz/nana-batch-v2/model"
 	"google.golang.org/api/sheets/v4"
@@ -35,11 +34,11 @@ func RunShippingFee(sheetName string) (bool, error) {
 
 	////////////////////// bussiness logic here
 
-	// load spredSheetId from config
-	err = godotenv.Load(".env")
-	if err != nil {
-		return false, fmt.Errorf("Error loading .env file")
-	}
+	// // load spredSheetId from config
+	// err = godotenv.Load(".env")
+	// if err != nil {
+	// 	return false, fmt.Errorf("Error loading .env file")
+	// }
 	spreadsheetId := os.Getenv("NANA_SHEET")
 
 	mainData, err := getDataFromMainSheet(srv, spreadsheetId)

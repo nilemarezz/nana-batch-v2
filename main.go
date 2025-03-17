@@ -6,7 +6,6 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
-	"github.com/joho/godotenv"
 	sheet "github.com/nilemarezz/nana-batch-v2/client"
 	"github.com/nilemarezz/nana-batch-v2/service"
 	"golang.org/x/crypto/bcrypt"
@@ -23,10 +22,10 @@ func main() {
 
 	sheet.ReadTemplate()
 
-	err := godotenv.Load(".env")
-	if err != nil {
-		fmt.Errorf("Error loading .env file")
-	}
+	// err := godotenv.Load(".env")
+	// if err != nil {
+	// 	fmt.Errorf("Error loading .env file")
+	// }
 
 	app.Post("/api/batch", func(c *fiber.Ctx) error {
 		var result bool
